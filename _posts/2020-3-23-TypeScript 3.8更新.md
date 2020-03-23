@@ -1,15 +1,7 @@
-<!--
- * @Author qyfeng
- * @LastEditors qyfeng
- * @LastEditTime 2020-03-23 11:28:17
- * @Description
- * @FilePath \undefinedd:\excitedspider.github.io\_posts\2020-3-23-TypeScript 3.8更新.md
- -->
-
 ---
 
 layout: post
-title: "TypeScript 3.8 更新"
+title: "TypeScript 3.8 新特性"
 date: 2020-3-23
 excerpt: "演进"
 tags: [TypeScript]
@@ -113,3 +105,17 @@ export { utilities };
 ## Top-Level await
 
 在全局上下文时可以使用await语法，就像在async函数中一样。
+
+```typescript
+const response = await fetch("...");
+```
+
+还不了解async/await异步语法的同学可以参考阮老师的es6标准入门<a herf="https://es6.ruanyifeng.com/?search=await&x=0&y=0#docs/async">相关章节</a>
+
+## ES2020标准支持
+
+typescript可以选择编译目标(target)为es2020，支持各种语法。对于写nodejs的同学和学习es2020标准的同学可能会有一些帮助，对于我们前端来说编译目标还是越低越好，所以不再多说。
+
+## 优化Linux上的Lang Server文件监控性能
+
+这个我是比较有体会，有段时间非常喜欢折腾linux做开发环境，玩过ubuntu，deepin，manjaro之类的发行版。但是Lang Server的表现太差了，初始化需要的时间很长，占内存很高。3.8的TypeScript专门对此作了优化，不过实际情况怎么样我还没有尝试，因为手上暂时还没有linux桌面环境。
