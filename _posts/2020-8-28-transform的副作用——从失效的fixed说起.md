@@ -11,9 +11,12 @@ comments: false
 
 现在有很多设计都是做相对视口固定的效果，例如：阅读文章时有一个固定的返回顶部按钮、电商页面有一个获取帮助的固定按钮。
 
-<img src="../assets/img/mdimg/2020-8-28-transform的副作用——从失效的fixed说起/image-20200828183627972.jpg" alt="image-20200828183627972" style="zoom: 25%;" />
 
-<center>知乎上的固定悬浮按钮</center>
+
+<center>
+  <img src="../assets/img/mdimg/2020-8-28-transform的副作用——从失效的fixed说起/image-20200828183627972.jpg" alt="image-20200828183627972" style="zoom: 25%;" /><br>知乎上的固定悬浮按钮
+</center>
+
 
 人尽皆知的是 `position:fixed` 可以用来做这种相对视口固定的效果。但笔者在使用 `position:fixed` 时曾经遇到过问题：设置`fixed`的元素嵌套在一个使用了`transform`的祖先元素中，导致了`fixed`失效。简易的还原例子可以看这个[codepen](https://codepen.io/excitedqe/pen/abNWrNB)。
 
@@ -54,9 +57,12 @@ MDN 这里的描述显然是说的一个结果。那么是什么机制造成了�
 
 ### 🌰 overflow area
 
-<img src="/Users/qe/excitedspider.github.io/_posts/2020-8-28-transform的副作用——从失效的fixed说起.assets/image-20200828190610701.png" alt="image-20200828190610701" style="zoom:50%;" />
 
-<center>需要拖动滑动条才能看见的子元素</center>
+
+<center>
+<img src="../assets/img/mdimg/2020-8-28-transform的副作用——从失效的fixed说起/image-20200828190610701.png" alt="image-20200828190610701" style="zoom:50%;" /><br>
+需要拖动滑动条才能看见的子元素
+</center>
 
 ```html
 <div class="container">
@@ -85,9 +91,9 @@ MDN 这里的描述显然是说的一个结果。那么是什么机制造成了�
 
 层叠上下文内部元素的z-index才能有互相作用。对于外部则不起作用，而是以层叠上下文整体的z-index（也就是根元素z-index）去相互比较。
 
-<img src="/Users/qe/excitedspider.github.io/_posts/2020-8-28-transform的副作用——从失效的fixed说起.assets/image-20200828191604439.png" alt="image-20200828191604439" style="zoom:50%;" />
 
-<center>z-index为10的元素叠在了z-index100 的元素之上</center>
+
+<center><img src="../assets/img/mdimg/2020-8-28-transform的副作用——从失效的fixed说起/image-20200828191604439.png" alt="image-20200828191604439" style="zoom:50%;" /><br>z-index为10的元素叠在了z-index100 的元素之上</center>
 
 ```html
 <div class="normal_container">
