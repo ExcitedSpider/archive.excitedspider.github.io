@@ -41,7 +41,7 @@ MDN 这里的描述显然是说的一个结果。那么是什么机制造成了�
 
 翻译和总结一下，transform 对其他元素渲染的副作用有：
 
-* transform 的元素会影响**overflow area** (溢出区域)。也就是说，使用transform使得元素移出了父元素之外的话，再敷原生上使用`overflow: scroll`和`overflow:auto`的情况下，父元素将会展示出滚动条。
+* transform 的元素会影响**overflow area** (溢出区域)。也就是说，使用transform使得元素移出了父元素之外的话，在父元素上使用`overflow: scroll`和`overflow:auto`的情况下，父元素将会展示出滚动条。
 * transform 的元素会创造一个**stack context** (层叠上下文)，造成内部和外部的z-index相互独立。
 * transform 的元素将会创建一个 **containing block** (包含块)，所有的`position`为`absolute`和`fixed`的子元素、以及设置了`background-attachment`的背景将会相对于该元素的 padding box 布局。
 
