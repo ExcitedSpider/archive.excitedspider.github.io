@@ -41,17 +41,17 @@ MDN 这里的描述显然是说的一个结果。那么是什么机制造成了�
 
 翻译和总结一下，transform 对其他元素渲染的副作用有：
 
-* transform 的元素会影响**overflow area** (溢出区域)。也就是说，使用transform使得元素移出了父元素之外的话，再敷原生上使用`overflow: scroll`和`overflow:auto`的情况下，父元素将会展示出滚动条。
+* transform 的元素会影响**overflow area** (溢出区域)。也就是说，使用transform使得元素移出了父元素之外的话，在父元素上使用`overflow: scroll`和`overflow:auto`的情况下，父元素将会展示出滚动条。
 * transform 的元素会创造一个**stack context** (层叠上下文)，造成内部和外部的z-index相互独立。
 * transform 的元素将会创建一个 **containing block** (包含块)，所有的`position`为`absolute`和`fixed`的子元素、以及设置了`background-attachment`的背景将会相对于该元素的 padding box 布局。
+
+> 这篇文章如果要找出一个最重要的地方，那就是这三个副作用了。
 
 <img src="../assets/img/mdimg/2020-8-28-transform的副作用——从失效的fixed说起/image-20200828185802850.png" alt="image-20200828185802850" style="zoom:33%;" />
 
 <center>当前的 CSS Transforms 标准</center>
 
 
-
-> 这篇文章如果要找出一个最重要的地方，那就是这三个副作用了。
 
 第三个规则则是造成了`fixed`失效的直接原因。除了造成笔者遇到的问题的第三条之外，我们可以用例子来详细看看这其余的两个副作用：
 
@@ -89,7 +89,7 @@ MDN 这里的描述显然是说的一个结果。那么是什么机制造成了�
 
 ### **🌰 stack context** 
 
-层叠上下文内部元素的z-index才能有互相作用。对于外部则不起作用，而是以层叠上下文整体的z-index（也就是根元素z-index）去相互比较。
+stack context(层叠上下文)内部元素的z-index才能有互相作用。对于外部则不起作用，而是以层叠上下文整体的z-index（也就是根元素z-index）去相互比较。
 
 
 
@@ -118,6 +118,7 @@ div{
 
 .normal{
   background: #ffb6b9;
+  z-index:100;
 }
 
 .transform_container{
@@ -127,6 +128,7 @@ div{
 
 .transformed{
   background: #fae3d9;
+  z-index:10;
 }
 ```
 
@@ -156,7 +158,7 @@ div{
 
 ## 一点思考
 
-为什么w3c会为了transform单独这样设计呢？我觉得最大的考虑点还是w3c委员会认为transform的元素及其子元素应该是一个整体，尽量减少对外部布局的影响，也减少外部布局对transform内部布局的影响，有点类似figma和sketch中 group 的概念。这样的话，浏览器引擎可以减少很多计算量。
+为什么w3c会为了transform单独这样设计呢？我觉得最大的考虑点还是w3c委员会认为transform的元素及其子元素应该是一个整体。这个设计的好处其一是更符合逻辑，可以类比一下ppt、figma、sketch中已组合的元素，他们的缩放、位移、动画等等变换都是一起的；其二是这样设计可以尽量减少对外部布局的影响，也减少外部对transform内部布局的影响，这样的话，浏览器引擎可以减少很多计算量。
 
 当然我也没有看 w3c 会议的相关邮件，这仅仅是我的猜测～
 
