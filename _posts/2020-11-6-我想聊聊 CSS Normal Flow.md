@@ -167,5 +167,7 @@ em{
 按照这个定义，相对定位(position: relative)的元素也是在 normal flow 中。为什么 w3c 这样定义呢？我们都知道相对定位的元素在原位置也会占位，就好像原位置上有一个一模一样大小的元素，并且是相对原位置进行定位而非相对包含块定位。这个原位置就是 Normal Flow 的布局位置。所以在这个意义上理解，相对定位的元素也是处于 Normal Flow 中。
 
 ## 参考
-[1] [Visual Formatting Model - w3.org](w3.org/TR/CSS2/visuren.html)
-[2] [Visual Formatting Model Detail - w3.org](w3.org/TR/CSS2/visudet.html)
+\[1] [Visual Formatting Model - w3.org](w3.org/TR/CSS2/visuren.html)
+
+\[2] [Visual Formatting Model Detail - w3.org](w3.org/TR/CSS2/visudet.html)
+
