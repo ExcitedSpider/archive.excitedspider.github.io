@@ -23,4 +23,4 @@ comments: false
 
 
 $yaml | Out-File ("./_posts/{0}.md" -f ($postname)) -Encoding utf8
-Typora ("./_posts/{0}.md" -f ($postname))
+open ("./_posts/{0}.md" -f ($postname))
