@@ -24,11 +24,15 @@ EyeDropper 在绝大部分文档、设计、创意类的软件中都有提供，
 
 1. Figma
 
-![Untitled](../../Downloads/Export-3ee1bc3f-714e-45b3-bf32-d789dfcde200/EyeDropper API 663d43e0b6fe45babf9f5772d240de5a/Untitled.png)Figma 的 EyeDropper 能够在**当前画布**上的任意像素中选取颜色
+   ![Untitled](../assets/img/mdimg/2021-11-5-EyeDropperAPI/Untitled.png)
+
+Figma 的 EyeDropper 能够在**当前画布**上的任意像素中选取颜色
 
 1. Keynote
 
-![Untitled 1](../../Downloads/Export-3ee1bc3f-714e-45b3-bf32-d789dfcde200/EyeDropper API 663d43e0b6fe45babf9f5772d240de5a/Untitled 1.png)Keynote 的 EyeDropper 能够从**整个屏幕**上的任意像素选取颜色
+   ![Untitled 1](../assets/img/mdimg/2021-11-5-EyeDropperAPI/Untitled 1.png)
+
+Keynote 的 EyeDropper 能够从**整个屏幕**上的任意像素选取颜色
 
 ## 如何使用
 
@@ -101,7 +105,9 @@ abortController.abort();
 
 色彩输入控件没有限制一定包含 EyeDropper，这是**语义上的差别**。此外，input color 的实现是没有标准的，不同浏览器、不同操作系统的实现不同，最后的结果千差万别。
 
-![Frame_4](../../Downloads/Export-3ee1bc3f-714e-45b3-bf32-d789dfcde200/EyeDropper API 663d43e0b6fe45babf9f5772d240de5a/Frame_4.png)从左到右: Chrome(Mac), Firefox(Mac), Safari
+![Frame_4](../assets/img/mdimg/2021-11-5-EyeDropperAPI/Frame_4.png)
+
+从左到右: Chrome(Mac), Firefox(Mac), Safari
 
 
 > 💡 测试你的浏览器怎么处理 input color:
@@ -110,7 +116,7 @@ abortController.abort();
 
 在支持度上，input color 显然是更好的：
 
-![Untitled 2](../../Downloads/Export-3ee1bc3f-714e-45b3-bf32-d789dfcde200/EyeDropper API 663d43e0b6fe45babf9f5772d240de5a/Untitled 2.png)
+![Untitled 2](../assets/img/mdimg/2021-11-5-EyeDropperAPI/Untitled 2.png)
 
 ## 参考
 
