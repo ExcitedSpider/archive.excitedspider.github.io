@@ -133,4 +133,4 @@ HTML 拖放 API 不仅可以实现拖放的交互，还可以承载多种数据�
 
 [Creating a Parking Game With the HTML Drag and Drop API](https://css-tricks.com/creating-a-parking-game-with-the-html-drag-and-drop-api/)
 
-[Breaking down barriers using the DataTransfer API](
+[Breaking down barriers using the DataTransfer API](https://web.dev/datatransfer/)
