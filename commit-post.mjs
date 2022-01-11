@@ -1,4 +1,4 @@
 #!/usr/bin/env zx
-$`git add .`
-$`git commit -m "submit new post"`
-$`git push origin master`
+await $`git add .`
+await $`git commit -m "submit new post"`
+await $`git push origin master`
